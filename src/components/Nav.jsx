@@ -1,5 +1,6 @@
 // src/components/NavBar.jsx
 import { useState } from "react";
+import logo from "../assets/image-16643.png";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ const NavBar = () => {
       {/* Logo Section */}
       <div className="flex items-center">
         <img
-          src="/src/assets/image 16643.png"
+          src={logo}
           alt="Logo"
           className="h-10 w-10"
         />
