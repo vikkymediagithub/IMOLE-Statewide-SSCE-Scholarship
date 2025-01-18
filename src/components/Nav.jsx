@@ -1,6 +1,6 @@
 // src/components/NavBar.jsx
 import { useState } from "react";
-import logo from "../assets/image-16643.png";
+import logo from "../assets/image 16643.png"; 
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ const NavBar = () => {
         <img
           src={logo}
           alt="Logo"
-          className="h-10 w-10"
+          className="h-10 w-10 md:h-12 md:w-12 object-contain"
         />
       </div>
 
