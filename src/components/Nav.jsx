@@ -9,7 +9,7 @@ const NavBar = () => {
       {/* Logo Section */}
       <div className="flex items-center">
         <img
-          src="/src/assets/image 16643.png" // Replace with your logo path
+          src="/src/assets/image 16643.png"
           alt="Logo"
           className="h-10 w-10"
         />
