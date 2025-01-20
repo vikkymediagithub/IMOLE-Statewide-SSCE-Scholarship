@@ -5,10 +5,10 @@ import { slideUpVariants, zoomInVariants } from "../components/animation";
 
 const Hero = () => {
   return (
-    <section className="relative flex flex-col md:flex-row items-center justify-between px-4 py-8 bg-black overflow-hidden">
+    <section id="home" className="relative flex flex-col md:flex-row items-center justify-between px-4 py-8 bg-black overflow-hidden">
       {/* Background Overlay with Transparent Black */}
       <div
-        className="absolute inset-0 bg-black opacity-10 pointer-events-none"
+        className="absolute inset-0 bg-black opacity-10 pointer-events-none "
         style={{
           backgroundImage: `url(${heroBg})`,
           backgroundSize: "cover",
@@ -21,7 +21,7 @@ const Hero = () => {
         variants={slideUpVariants}
         initial="hidden"
         animate="visible"
-        className="flex flex-col items-start space-y-4 max-w-l relative z-10 text-white mb-6 md:mb-0 px-6 md:px-10"
+        className="flex flex-col items-start space-y-4 max-w-l relative z-10 text-white mb-6 md:mb-0  mt-10 px-6 md:px-10"
       >
         <motion.h1
           variants={slideUpVariants}
@@ -49,7 +49,7 @@ const Hero = () => {
           whileInView="visible"
           src={heroImage}
           alt="Hero Illustration"
-          className="object-contain h-[350px] md:h-[500px] lg:h-[650px] xl:h-[700px] w-auto lg:mb-[-30px]"
+          className="object-contain h-[350px] md:h-[500px] lg:h-[650px] xl:h-[700px] w-auto lg:mb-[-30px] mb-10"
         />
       </div>
     </section>

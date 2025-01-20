@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import AboutScholarship from "./components/AboutScholarhip";
 import ParticipateSection from "./components/ParticipateSection";
 import HowToWinSection from "./components/HowToWinSection";
+import ContactSection from "./components/ContactUs";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <AboutScholarship />
       <ParticipateSection />
       <HowToWinSection />
+      <ContactSection />
       <Footer />
     </div>
   );

@@ -49,28 +49,35 @@ const ResponsiveCards = () => {
     },
   ];
 
-  // Motion animation variants
-  const fadeInVariant = {
+  // Animation variants
+  const containerVariant = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, duration: 0.6 },
+    },
+  };
+
+  const cardVariant = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   return (
     <motion.section
+      id="about"
       initial="hidden"
-      animate="visible"
-      variants={fadeInVariant}
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariant}
       className="px-7 py-12"
     >
       {/* Title and Description */}
       <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInVariant}
+        variants={cardVariant}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-10">
           About the Scholarship
         </h2>
         <p className="mt-4 text-gray-600 max-w-3xl mx-auto text-lg">
@@ -85,17 +92,20 @@ const ResponsiveCards = () => {
       </motion.div>
 
       {/* Featuring Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <motion.h2
+        variants={cardVariant}
+        className="text-3xl md:text-4xl font-bold text-gray-800 mb-10 text-center"
+      >
+        Featuring
+      </motion.h2>
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        variants={containerVariant}
+      >
         {cardData.map((card, index) => (
           <motion.div
             key={index}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0, scale: 0.95 },
-              visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
-            }}
+            variants={cardVariant}
             className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col"
           >
             {/* Title and Icon */}
@@ -120,7 +130,7 @@ const ResponsiveCards = () => {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </motion.section>
   );
 };
